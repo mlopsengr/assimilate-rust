@@ -49,3 +49,4 @@ pub(crate) async fn my_handler(event: LambdaEvent<Request>) -> Result<Response, 
     // return `Response` (it will be serialized to JSON automatically by the runtime)
     Ok(resp)
 }
+
