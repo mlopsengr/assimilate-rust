@@ -11,6 +11,7 @@ use serde::{Deserialize, Serialize};
 #[derive(Deserialize)]
 struct Request {
     command: String,
+    
 }
 
 /// This is a made-up example of what a response structure may look like.
