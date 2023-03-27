@@ -22,3 +22,7 @@ sh npm i aws-cdk-lib
 
 
 
+## Rust Guide
+- [Rust Book](https://doc.rust-lang.org/book/title-page.html)
+
+- Rust is a statically typed language, meaning that it must know the types of all variables at compile time, however, the compiler can usually infer what type we want to use based on the value and how we use it.
