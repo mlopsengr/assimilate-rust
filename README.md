@@ -26,3 +26,15 @@ sh npm i aws-cdk-lib
 - [Rust Book](https://doc.rust-lang.org/book/title-page.html)
 
 - Rust is a statically typed language, meaning that it must know the types of all variables at compile time, however, the compiler can usually infer what type we want to use based on the value and how we use it.
+
+- Integer types in Rust 
+Length	Signed	Unsigned
+8-bit	i8	    u8
+16-bit	i16	    u16
+32-bit	i32	    u32
+64-bit	i64	    u64
+128-bit	i128	u128
+arch	isize	usize
+
+- all floating-point numbers are 64-bit in size and are signed (f64), and the smaller, 32-bit version (f32) is also available.
+- Booleans are one byte in size.
