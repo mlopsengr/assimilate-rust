@@ -36,5 +36,11 @@ Length	Signed	Unsigned
 128-bit	i128	u128
 arch	isize	usize
 
+- The two major data types in Rust are scalars and compound types.
+
 - all floating-point numbers are 64-bit in size and are signed (f64), and the smaller, 32-bit version (f32) is also available.
 - Booleans are one byte in size.
+- Rust char type is 4 bytes in size.
+- The above are all scalar types because they represent a single value.
+- Compound types can group mulitple values into one type.
+- Both arrays and tuples are fixed length, but arrays can only contain values of the same type, while tuples can contain values of different types.
