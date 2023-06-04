@@ -25,6 +25,18 @@ let mean_squared_error = (errors.transpose() * &errors).get(0, 0) / x.rows() as 
 
 println!("MSE: {}", mean_squared_error);
 assert!(mean_squared_error > 0.41);
+assert!(mean_squared_error < 0.42);
+println!("Predicted y values:\n{:?}", &predictions);
+println!("Actual y values:\n{:?}", &y);
+
+let test_x: Matrix<f32> = matrix::column(vec![-3.0, -1.0, 0.5, 2.5, 13.0, 14.0]);
+let test_y = test_x.map(|x| x.powi(2) + x.sin());
+let mut test_x = test_x.clone();
+test_X.insert_column(0, 1.0);
+test_X.insert_column_with(2, test_x.column_iter(0).map(|x| x * x));
+
+
+
 
 
 fn main() {
