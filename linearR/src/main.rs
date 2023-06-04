@@ -35,10 +35,14 @@ let mut test_x = test_x.clone();
 test_X.insert_column(0, 1.0);
 test_X.insert_column_with(2, test_x.column_iter(0).map(|x| x * x));
 
+println!("Unseen x values:\n{?}", &test_x);
+println!("Unseen y predictions:\n{:?}", &test_X * &w);
+println!("Unseen y actual values:\n{:?}", test_y);
+let errors = &test_y - (&test_X * &w);
+let mean_squared_error = (errors.transpose() * &errors).get(0, 0) / test_x.rows() as f32;
+println!("MSE on unseen values: {}", mean_squared_error);
+assert!(mean_squared_error < 1.0);
+assert!(mean_squared_error > 0.99);
 
 
 
-
-fn main() {
-    println!("Hello, world!");
-}
