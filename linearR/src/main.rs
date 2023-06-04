@@ -21,7 +21,11 @@ let predictions = &X * &w;
 
 let errors = &y - &predictions;
 
-let mean_squared_error = (errors.transpose() * &errors).get
+let mean_squared_error = (errors.transpose() * &errors).get(0, 0) / x.rows() as f32;
+
+println!("MSE: {}", mean_squared_error);
+assert!(mean_squared_error > 0.41);
+
 
 fn main() {
     println!("Hello, world!");
