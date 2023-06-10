@@ -1,7 +1,4 @@
-use polars::prelude::*;
 use polars::frame::DataFrame;
-use polars::series::Series;
-use std::error::Error;
 use csv::Writer; 
 
 
