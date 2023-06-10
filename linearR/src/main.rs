@@ -1,8 +1,8 @@
 use easy_ml::matrices::Matrix;
 
-let x: Matrix<f32> = Matrix::Column(
+let x: Matrix<f32> = Matrix::column(
     vec![0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0]
-)
+);
 
 let y = x.map(|x| x.powi(2) + x.sin());
 println!("{:?}", &y);
@@ -11,7 +11,7 @@ let mut X = x.clone();
 
 X.insert_column(0, 1.0);
 
-X.insert_column_with(2, x.column_iter(0).map(|x| x * x))
+X.insert_column_with(2, x.column_iter(0).map(|x| x * x));
 println!("{:?}", &X);
 
 
@@ -46,3 +46,27 @@ assert!(mean_squared_error > 0.99);
 
 
 
+
+use tabular::{Table, Row};
+use std:path::Path;
+
+fn ls(dir: &Path) -> ::std::io::Result<()> {
+    let mut table = Table::new("{:>} {:<}{:<} {:<}");
+    for entry_result in ::std::fs::read_dir(dir)? {
+        let entry = entry_result?;
+        let metadata = entry.metadata()?;
+
+        table.add_row(Row::new()
+             .with_cell(metadata.len())
+             .with_cell(if metadata.permissions().readonly() {"r"} else {""})
+             .with_cell(if metadata.is_dir() {"d"} else {""})
+             .with_cell(entry.path().display()));
+                
+    }
+
+    print!("{}", table);
+
+    ok(())
+}
+
+ls(Path::new(&"target")).unwrap();
