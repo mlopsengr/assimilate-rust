@@ -96,5 +96,7 @@ pub async fn get_product(
             )
         }
         // Error
-        
+        Err(err) => {
+            
+        }
     })
