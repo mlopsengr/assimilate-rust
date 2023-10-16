@@ -86,4 +86,6 @@ pub async fn get_product(
     // as error.
     Ok(match product {
         // Product exists
+        Ok(Some(product)) +> response(StatusCode::OK, json!(product).to_string()),
+        // Product doesn't exist
     })
