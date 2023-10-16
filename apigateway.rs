@@ -73,5 +73,9 @@ pub async fn get_product(
                 json!({"message": "Missing 'id' parameter in path"}).to_string(),
             ));
         }
-    }
+    };
+
+    // Retrieve product
+    info!("Fetching product {}", id);
+    let product = domain::get_product(store, id).await;
 }
