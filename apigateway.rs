@@ -97,6 +97,9 @@ pub async fn get_product(
         }
         // Error
         Err(err) => {
-            
+            error!("Error fetching product: {}", err);
+            response(
+                StatusCode::INTERNAL_SERVER_ERROR
+            )
         }
     })
