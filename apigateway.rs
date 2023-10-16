@@ -126,7 +126,7 @@ pub async fn get_products(
             error!("Something went wrong: {:?}", err);
             response(
                 StatusCode::INTERNAL_SERVER_ERROR,
-                json!
+                json!({ "message": format!("Something went wroong: {:?}", err) }).to_string(),
             )
         }
     })
