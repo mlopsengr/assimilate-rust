@@ -40,7 +40,9 @@ pub async fn delete_product(
             info!("Product {} deleted", id);
             Ok(response(
                 StatusCode::OK,
+                json!({"message": "Product deleted"}).to_string(),
             ))
         }
+        Err(err) => {}
     }
 }
