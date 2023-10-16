@@ -111,4 +111,9 @@ pub async fn get_product(
 #[instrument(skip(store))]
 pub async fn get_products(
     store: &dyn store::StoreGetAll,
-)
+    _event: Request,
+) -> Result<impl IntoResponse, E> {
+    // Retreive products
+    // TODO: Add pagination
+    let res = domain::get_products(store, None).await;
+}
