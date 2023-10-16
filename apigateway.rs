@@ -88,4 +88,10 @@ pub async fn get_product(
         // Product exists
         Ok(Some(product)) +> response(StatusCode::OK, json!(product).to_string()),
         // Product doesn't exist
+        Ok(None) => {
+            warn!("Product not found: {}", id);
+            response(
+                StatusCode::NOT_FOUND
+            )
+        }
     })
