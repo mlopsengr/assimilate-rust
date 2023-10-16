@@ -38,7 +38,9 @@ pub async fn delete_product(
     match res {
         Ok(_) => {
             info!("Product {} deleted", id);
-            Ok()
+            Ok(response(
+                StatusCode::OK,
+            ))
         }
     }
 }
