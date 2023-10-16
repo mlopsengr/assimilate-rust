@@ -105,3 +105,10 @@ pub async fn get_product(
         }
         // Error
     })
+}
+
+/// Retrieve products
+#[instrument(skip(store))]
+pub async fn get_products(
+    store: &dyn store::StoreGetAll,
+)
