@@ -69,8 +69,9 @@ pub async fn get_product(
         None => {
             warn!("Missing 'id' parameter in path"); 
             return Ok(response(
-                StatusCode::BAD_REQUEST
-            ))
+                StatusCode::BAD_REQUEST,
+                json!({"message": "Missing 'id' parameter in path"}).to_string(),
+            ));
         }
     }
 }
