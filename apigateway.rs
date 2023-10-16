@@ -78,4 +78,12 @@ pub async fn get_product(
     // Retrieve product
     info!("Fetching product {}", id);
     let product = domain::get_product(store, id).await;
-}
+    
+    // Retuen response
+    //
+    // Since the service returns an `Option` within a `Result`, there are threee
+    // potential scenarios: the product exists, it doesn't exist, or there was
+    // as error.
+    Ok(match product {
+        // Product exists
+    })
