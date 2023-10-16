@@ -53,3 +53,9 @@ pub async fn delete_product(
         }
     }
 }
+
+/// Get a product
+#[instrument(skip(store))]
+pub async fn get_product(
+    
+)
