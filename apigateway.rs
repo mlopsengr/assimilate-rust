@@ -45,6 +45,7 @@ pub async fn delete_product(
         }
         Err(err) => {
             // Log the error message
+            error!("Error deleting the product {}: {}", id, err);
         }
     }
 }
