@@ -121,5 +121,9 @@ pub async fn get_products(
     Ok(match res {
         // Retrun a list of products
         Ok(res) => response(StatusCode::OK, json!(res).to_string()),
+        // Return an error
+        Err(err) => {
+            
+        }
     })
 }
