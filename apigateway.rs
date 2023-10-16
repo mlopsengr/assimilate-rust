@@ -116,4 +116,10 @@ pub async fn get_products(
     // Retreive products
     // TODO: Add pagination
     let res = domain::get_products(store, None).await;
+
+    // Return response
+    Ok(match res {
+        // Retrun a list of products
+        Ok(res) => response(StatusCode::OK, json!(res).to_string()),
+    })
 }
