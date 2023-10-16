@@ -131,3 +131,9 @@ pub async fn get_products(
         }
     })
 }
+
+/// Put a product
+#[instrument(skip(store))]
+pub aysnc fn put_product(
+    store: &dyn store::StorePut,
+)
