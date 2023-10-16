@@ -91,7 +91,10 @@ pub async fn get_product(
         Ok(None) => {
             warn!("Product not found: {}", id);
             response(
-                StatusCode::NOT_FOUND
+                StatusCode::NOT_FOUND,
+                json!({"message": "product not found"}).to_string(),
             )
         }
+        // Error
+        
     })
