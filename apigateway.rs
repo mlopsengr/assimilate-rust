@@ -63,4 +63,11 @@ pub async fn get_product(
     // Retrieve product ID from event.
     //
     // If the event doesn't contain a product ID, we return a 400 Bad Reequest.
+    let path_parameters = even.path_parameters();
+    let id = match path_parameters.first("id") {
+        Some(id) => id,
+        None => {
+            warn!("Missing 'id' parameter in path"); 
+        }
+    }
 }
