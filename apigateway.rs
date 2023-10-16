@@ -8,5 +8,31 @@ type E = Box<dyn std::error::Error + Sync + Send + 'static>;
 /// Delete a product
 #[instrument(skip(store))]
 pub async fn delete_product(
-    
-)
+    store: &dyn store::StoreDelete,
+    event: Request,
+) -> Result<impl IntoResponse, E> {
+    // Retreive product ID from event
+    //
+    // If the event doesn't contain a product ID, we return a 400 Bad Request.
+    let path_parameters = event.path_parameters();
+    let id = match path_parameters.first("id") {
+        Some(id) => id,
+        None => {
+            warn!("Missing 'id' parameter in path");
+            return Ok(response(
+                StatusCode::BAD_REQUEST,
+                json!({ "message": "Missing 'id' parameter in path" }).to_string(),
+            ));
+        }
+    };
+
+    // Delete product
+    info!("Deleting product {}", id);
+    let res = domain::delete_product(store, id).await;
+
+    // Return response
+    //
+    // The service returns a Result based on the success of the operaion. If 
+    // the operation was successful, the RESULT IS OK(()), otherwise it will
+    // contain an Err with the reason
+}
