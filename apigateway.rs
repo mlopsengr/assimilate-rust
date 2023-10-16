@@ -48,6 +48,7 @@ pub async fn delete_product(
             error!("Error deleting the product {}: {}", id, err);
             Ok(response(
                 StatusCode::INTERNAL_SERVER_ERROR,
+                json!({"message": "Failed to delete product"}).to_string()
             ))
         }
     }
