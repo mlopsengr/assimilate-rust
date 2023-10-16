@@ -43,6 +43,8 @@ pub async fn delete_product(
                 json!({"message": "Product deleted"}).to_string(),
             ))
         }
-        Err(err) => {}
+        Err(err) => {
+            // Log the error message
+        }
     }
 }
