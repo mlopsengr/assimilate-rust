@@ -57,5 +57,10 @@ pub async fn delete_product(
 /// Get a product
 #[instrument(skip(store))]
 pub async fn get_product(
-    
-)
+    store: &dyn store::StoreGet,
+    event: Request,
+) -> Result<impl IntoResponse, E> {
+    // Retrieve product ID from event.
+    //
+    // If the event doesn't contain a product ID, we return a 400 Bad Reequest.
+}
