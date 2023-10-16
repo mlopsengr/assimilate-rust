@@ -35,4 +35,10 @@ pub async fn delete_product(
     // The service returns a Result based on the success of the operaion. If 
     // the operation was successful, the RESULT IS OK(()), otherwise it will
     // contain an Err with the reason
+    match res {
+        Ok(_) => {
+            info!("Product {} deleted", id);
+            Ok()
+        }
+    }
 }
