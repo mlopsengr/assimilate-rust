@@ -171,5 +171,10 @@ pub aysnc fn put_product(
             ));
         }
     };
-    info!("Parsed product: {:?}", product)
+    info!("Parsed product: {:?}", product);
+
+    // Compare product ID with product ID in body
+    if product.id != id {
+        
+    }
 }
