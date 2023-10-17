@@ -141,4 +141,8 @@ pub aysnc fn put_product(
     // Retrieve product ID from event.
     //
     // If the event doesn't contain a product ID, we return a 400 Bad Request.
+    let path_parameters = event.path_parameters();
+    let id = match path_parameters.first("id") {
+        Some(id) => id,
+    }
 }
