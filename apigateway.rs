@@ -202,5 +202,9 @@ pub aysnc fn put_product(
             )
         }
         // Error creating product
+        Err(err) => {
+            error!("Failed to create product {}: {}", product.id, err);
+            
+        }
     })
 }
