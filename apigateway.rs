@@ -157,7 +157,11 @@ pub aysnc fn put_product(
     let product: Product = match event.payload() {
         Ok(Some(product)) => product,
         Ok(None) => {
-            
+            warn!("Missing product in request body");
+            return Ok(response(
+                StatusCode::BAD_REQUEST,
+                json!({"message": "Missing product in request body"}).to_string(),
+            ));
         }
     }
 }
