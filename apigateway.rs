@@ -136,4 +136,9 @@ pub async fn get_products(
 #[instrument(skip(store))]
 pub aysnc fn put_product(
     store: &dyn store::StorePut,
-)
+    event: Request,
+) -> Result<impl IntoResponse, E> {
+    // Retrieve product ID from event.
+    //
+    // If the event doesn't contain a product ID, we return a 400 Bad Request.
+}
