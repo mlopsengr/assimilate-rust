@@ -170,5 +170,6 @@ pub aysnc fn put_product(
                 json!({"message": "Failed to parse product from request body"}).to_string(),
             ));
         }
-    }
+    };
+    info!("Parsed product: {:?}", product)
 }
