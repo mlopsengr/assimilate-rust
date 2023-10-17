@@ -187,4 +187,15 @@ pub aysnc fn put_product(
 
     // Put prdouct
     let res = domain::put_product(store, &product).await
+
+    // Return response
+    //
+    // If the put was successful, we retrun a 201 Created. Otherwise, we return
+    // a 500 Internal Server Error.
+    Ok(match res {
+        // Product created
+        Ok(_) => {
+            info!("Created product {:?}", product.id);
+        }
+    })
 }
