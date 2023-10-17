@@ -163,5 +163,8 @@ pub aysnc fn put_product(
                 json!({"message": "Missing product in request body"}).to_string(),
             ));
         }
+        Err(err) => {
+            warn!
+        }
     }
 }
