@@ -175,6 +175,12 @@ pub aysnc fn put_product(
 
     // Compare product ID with product ID in body
     if product.id != id {
-        
+        warn!(
+            "product ID in path ({}) does not match product ID in body ({})",
+            id, product.id
+        );
+        return Ok(response(
+            
+        ))
     }
 }
