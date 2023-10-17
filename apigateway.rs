@@ -180,6 +180,8 @@ pub aysnc fn put_product(
             id, product.id
         );
         return Ok(response(
+            StatusCode::BAD_REQUEST,
+            json!({"message": "Product ID in path does not match product ID in body"}).to_string(),
             
         ))
     }
