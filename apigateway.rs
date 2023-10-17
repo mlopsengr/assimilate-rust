@@ -148,6 +148,7 @@ pub aysnc fn put_product(
             warn!("Missing 'id' parameter in path");
             return Ok(response(
                 StatusCode::BAD_REQUEST,
+                json!({"message": "Missing 'id' parametere in path" }).to_string(),
             ))
         }
     }
