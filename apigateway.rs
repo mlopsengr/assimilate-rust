@@ -144,5 +144,8 @@ pub aysnc fn put_product(
     let path_parameters = event.path_parameters();
     let id = match path_parameters.first("id") {
         Some(id) => id,
+        None => {
+            warn!("Missing 'id' parameter in path");
+        }
     }
 }
