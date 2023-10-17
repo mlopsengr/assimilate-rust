@@ -181,8 +181,10 @@ pub aysnc fn put_product(
         );
         return Ok(response(
             StatusCode::BAD_REQUEST,
-            json!({"message": "Product ID in path does not match product ID in body"}).to_string(),
-            
-        ))
+            json!({"message": "Product ID in path does not match product ID in body"}).to_string(), 
+        ));
     }
+
+    // Put prdouct
+    let res = domain::put_product(store, &product).await
 }
