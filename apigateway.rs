@@ -196,6 +196,11 @@ pub aysnc fn put_product(
         // Product created
         Ok(_) => {
             info!("Created product {:?}", product.id);
+            response(
+                StatusCode::CREATED,
+                json!({"message": "Product created"}).to_string(),
+            )
         }
+        // Error creating product
     })
 }
