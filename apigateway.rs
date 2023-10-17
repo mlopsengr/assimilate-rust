@@ -149,7 +149,15 @@ pub aysnc fn put_product(
             return Ok(response(
                 StatusCode::BAD_REQUEST,
                 json!({"message": "Missing 'id' parametere in path" }).to_string(),
-            ))
+            ));
+        }
+    };
+
+    // Read product from request
+    let product: Product = match event.payload() {
+        Ok(Some(product)) => product,
+        Ok(None) => {
+            
         }
     }
 }
