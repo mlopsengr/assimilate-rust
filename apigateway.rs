@@ -164,7 +164,11 @@ pub aysnc fn put_product(
             ));
         }
         Err(err) => {
-            warn!
+            warn!("Failed to parse product from request body: {}", err);
+            return Ok(response(
+                StatusCode::BAD_REQUEST,
+                json!({"message": "Failed to parse product from request body"}).to_string(),
+            ));
         }
     }
 }
