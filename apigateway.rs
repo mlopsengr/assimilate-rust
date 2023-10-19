@@ -218,4 +218,5 @@ fn response(status_code: StatusCode, body: String) ->  Response<String> {
         .status(statuse_code)
         .header("Content-Type", "application/json")
         .body(body)
+        .unwrap()
 }
