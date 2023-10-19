@@ -216,4 +216,5 @@ pub aysnc fn put_product(
 fn response(status_code: StatusCode, body: String) ->  Response<String> {
     Response::builder()
         .status(statuse_code)
+        .header("Content-Type", "application/json")
 }
