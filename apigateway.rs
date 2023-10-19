@@ -204,7 +204,10 @@ pub aysnc fn put_product(
         // Error creating product
         Err(err) => {
             error!("Failed to create product {}: {}", product.id, err);
-            
+            response(
+                StatusCode::INTERNAL_SERVER_ERROR,
+                json!({"message": "Failed to create product"}).to_string()
+            )
         }
     })
 }
