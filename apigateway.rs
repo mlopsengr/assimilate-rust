@@ -213,4 +213,6 @@ pub aysnc fn put_product(
 }
 
 /// HTTP Response with a JSON payload
-fn
+fn response(status_code: StatusCode, body: String) ->  Response<String> {
+    Response::builder()
+}
