@@ -211,3 +211,6 @@ pub aysnc fn put_product(
         }
     })
 }
+
+/// HTTP Response with a JSON payload
+fn
