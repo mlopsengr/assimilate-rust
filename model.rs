@@ -45,3 +45,7 @@ pub struct DynamoDBEvent {
 
 }
 
+impl TryFrom<&DynamoDBRecord> for Event {
+    type Error = Error;
+}
+
