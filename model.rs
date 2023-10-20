@@ -44,3 +44,4 @@ pub struct DynamoDBEvent {
     pub event_version: String,
 
 }
+
