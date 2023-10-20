@@ -16,6 +16,7 @@ use std::collections::HashMap;
 #[derive(Deserialize, Serialize, Debug)]
 pub struct DynamoDBEvent {
     #[serde(rename = "Records")]
+    pub records: Vec<DynamoDBRecord>,
 }
 
 
