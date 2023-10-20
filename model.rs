@@ -25,7 +25,6 @@ pub struct DynamoDBEvent {
     #[serde(rename = "awsRegion")]
     pub aws_region: String,
 
-    
-
-
+    #[serde(rename = "DynamoDB")]
+    pub dynamodb: DynamoDBStreamRecord,
 }
