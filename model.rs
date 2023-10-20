@@ -14,6 +14,9 @@ use std::collections::HashMap;
 
 
 #[derive(Deserialize, Serialize, Debug)]
+pub struct DynamoDBEvent {
+    #[serde(rename = "Records")]
+}
 
 
 #[derive(Deserialize, Serialize, Debug)]
