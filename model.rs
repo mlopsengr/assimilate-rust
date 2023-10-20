@@ -27,4 +27,6 @@ pub struct DynamoDBEvent {
 
     #[serde(rename = "DynamoDB")]
     pub dynamodb: DynamoDBStreamRecord,
+
+    #[serde(rename = "eventID")]
 }
