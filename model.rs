@@ -40,4 +40,7 @@ pub struct DynamoDBEvent {
     #[serde(rename = "eventSourceARN")]
     pub event_source_arn: String,
 
+    #[serde(rename = "EventVersion")]
+    pub event_version: String,
+
 }
