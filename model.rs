@@ -33,4 +33,8 @@ pub struct DynamoDBEvent {
 
     #[serde(rename = "eventName")]
     pub event_name: String;
+
+    #[serde(rename = "eventSource")]
+    pub event_source = String;
+
 }
