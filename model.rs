@@ -56,6 +56,9 @@ impl TryFrom<&DynamoDBRecord> for Event {
                 let product = (&value.dynamodb.new_image).try_into()?;
                 Ok(Event::Created { product })
             }
-            
+            "MODIFY" => {
+                let old = (&value.dynamodb.old_image).try_into()?;
+                let new = (&value.dynamodb.new_image).try_into()?;
+            }
         }
     }
