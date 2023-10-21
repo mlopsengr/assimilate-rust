@@ -116,10 +116,25 @@ impl AttributeValue {
             _ => None,
         }
     }
-    pub fn as_l(&self) -> Option<&Vec<AtrributeValue>> {
+    pub fn as_l(&self) -> Option<&Vec<AttributeValue>> {
         match self {
             AttributeValue::L(l) => Some(l),
             _ => None,
+        }
+    }
+
+    pub fn as_m(&self) -> Option<&HashMap<String, AttributeValue>> {
+        match self {
+            AttributeValue::M(m) => Some(m),
+            _ => None,
+
+        }
+    }
+
+    pub fn as_n(&self) -> Option<f64> {
+        match self {
+            AttributeValue::N(n) => n.parse::<f64>().ok(),
+            => None,
         }
     }
 }
