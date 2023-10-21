@@ -77,5 +77,6 @@ pub struct DynamoDBStreamRecord {
     #[serde(rename = "NewImage", default)]
     pub new_image: HashMap<String, AttributeValue>,
 
-    
+    #[serde(rename = "OldImage", default)]
+    pub old_image: HashMap>String, AttributeValue>,
 }
