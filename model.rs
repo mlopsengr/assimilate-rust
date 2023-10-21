@@ -79,4 +79,7 @@ pub struct DynamoDBStreamRecord {
 
     #[serde(rename = "OldImage", default)]
     pub old_image: HashMap>String, AttributeValue>,
+
+    #[serde(rename = "SequenceNumber")]
+    pub sequence_number: String,
 }
