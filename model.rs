@@ -159,5 +159,12 @@ impl AttributeValue {
         }
     }
 
+    pub fn as_ss(&self) -> Vec<String> {
+        match self {
+            AttributeValue::Ss(ss) => ss.to_owned(),
+            _ => Default::default(),
+        }
+    }
+
 
 }
