@@ -89,3 +89,13 @@ pub struct DynamoDBStreamRecord {
     #[serde(rename = "StreamViewType")]
     pub stream_view_type: String,
 }
+
+/// Attribute Value
+/// 
+/// This is a copy of the `AttributeValue` struct from the AWS SDk for Rust,
+/// but without blob and `is_`-prefixed methods.
+
+#[derive(Deserialize, Serialize, Debug)]
+pub enum AttributeValue {
+    
+}
