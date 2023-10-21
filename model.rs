@@ -53,7 +53,9 @@ impl TryFrom<&DynamoDBRecord> for Event {
     fn try_from(value: &DynamoDBRecord) -> Result<Self, Self::Error> {
         match value.event_name.as_str() {
             "INSERT" => {
-                
+                let product = (&value.dynamodb.new_image).try_into()?;
+                Ok(Event::Created { product })
             }
+            
         }
     }
