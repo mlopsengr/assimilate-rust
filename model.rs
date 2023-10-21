@@ -61,5 +61,6 @@ impl TryFrom<&DynamoDBRecord> for Event {
                 let new = (&value.dynamodb.new_image).try_into()?;
                 Ok(Event::Updated { old, new })
             }
+            _ => Err(Error::InternalError("Unknown event type")), 
         }
     }
