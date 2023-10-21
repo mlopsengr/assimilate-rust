@@ -110,5 +110,16 @@ pub enum AttributeValue {
 }
 
 impl AttributeValue {
-    pub 
+    pub fn as_bool(&self) -> Option<bool> {
+        match self {
+            AttributeValue::Bool(b) => Some(*b),
+            _ => None,
+        }
+    }
+    pub fn as_l(&self) -> Option<&Vec<AtrributeValue>> {
+        match self {
+            AttributeValue::L(l) => Some(l),
+            _ => None,
+        }
+    }
 }
