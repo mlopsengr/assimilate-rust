@@ -137,4 +137,11 @@ impl AttributeValue {
             => None,
         }
     }
+
+    pub fn as_ns(&self) -> Vec<f64> {
+        match self {
+            AttributeValue::Ns(ns) => ns.iter().filter_map(|n| n.parse::<f64>().ok()).collect(),
+            _ => Default::default(),
+        }
+    }
 }
