@@ -47,7 +47,7 @@ pub struct DynamoDBEvent {
 
 impl TryFrom<&DynamoDBRecord> for Event {
     type Error = Error;
-}
+
 
     /// Try converting a DynamoDB record to an event.
     fn try_from(value: &DynamoDBRecord) -> Result<Self, Self::Error> {
@@ -64,3 +64,6 @@ impl TryFrom<&DynamoDBRecord> for Event {
             _ => Err(Error::InternalError("Unknown event type")), 
         }
     }
+}
+
+#[derive(Deserialize, Serialize, Debug)]
