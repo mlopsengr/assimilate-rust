@@ -152,5 +152,12 @@ impl AttributeValue {
         }
     }
 
-    
+    pub fn as_s(&self) -> Vec<String> {
+        match self {
+            AttributeValue::S(s) => Some(s),
+            _ => None,
+        }
+    }
+
+
 }
