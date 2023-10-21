@@ -97,5 +97,18 @@ pub struct DynamoDBStreamRecord {
 
 #[derive(Deserialize, Serialize, Debug)]
 pub enum AttributeValue {
-    
+    // B(Blob),
+    Bool(bool),
+    // Bs(Vec<Blob>),
+    L(Vec<AttributeValue>),
+    M(HashMap<String, AttributeValue>),
+    N(String),
+    Ns(Vec<String),
+    Null(bool)
+    S(String)
+    Ss(Vec<String>)
+}
+
+impl AttributeValue {
+    pub 
 }
