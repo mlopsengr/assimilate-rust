@@ -82,4 +82,7 @@ pub struct DynamoDBStreamRecord {
 
     #[serde(rename = "SequenceNumber")]
     pub sequence_number: String,
+
+    #[serde(rename = "SizeBytes")]
+    pub size_bytes: f64
 }
