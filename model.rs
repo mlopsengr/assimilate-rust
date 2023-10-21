@@ -49,4 +49,11 @@ impl TryFrom<&DynamoDBRecord> for Event {
     type Error = Error;
 }
 
-    /// Try converting a DynamoDB record to an event
+    /// Try converting a DynamoDB record to an event.
+    fn try_from(value: &DynamoDBRecord) -> Result<Self, Self::Error> {
+        match value.event_name.as_str() {
+            "INSERT" => {
+                
+            }
+        }
+    }
