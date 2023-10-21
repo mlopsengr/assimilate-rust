@@ -70,5 +70,9 @@ impl TryFrom<&DynamoDBRecord> for Event {
 pub struct DynamoDBStreamRecord {
     #[serde(rename = "ApproximateCreation")]
     pub approximate_creation_date_time: Option<f64>,
+
+    #[serde(rename = "keys", default)]
+    pub keys: HashMap<String, AttributeValue>,
     
+
 }
