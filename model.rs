@@ -144,4 +144,13 @@ impl AttributeValue {
             _ => Default::default(),
         }
     }
+
+    pub fn as_null(&self) -> Option<bool> {
+        match self {
+            AttributeValue::Null(null) => Some(*null),
+            _ => None,
+        }
+    }
+
+    
 }
