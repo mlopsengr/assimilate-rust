@@ -49,3 +49,4 @@ impl TryFrom<&DynamoDBRecord> for Event {
     type Error = Error;
 }
 
+    /// Try converting a DynamoDB record to an event
