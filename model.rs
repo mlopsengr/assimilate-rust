@@ -184,6 +184,8 @@ impl TryFrom<&HashMap<String, AttributeValue>> for Product {
             name: value
                 .get("name")
                 .ok_or(Error::InternalError("Missing Name"))?
+                .as_s()
+                .ok_or(Error::InternalError("Name is not a string"))?
         })
     }
 }
