@@ -174,6 +174,10 @@ impl TryFrom<&HashMap<String, AttributeValue>> for Product {
     /// 
     /// This could fail as the DynamoDB item might be missing ome fields.
     fn try_from(value: &HashMap<String, AttributeValue>) -> Result<Self, Self::Error> {
-        
+        Ok(product{
+            id: value
+                .get("id")
+                .ok_or(Error::InternalError("Missing id"))?
+        })
     }
 }
