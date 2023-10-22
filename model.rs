@@ -180,6 +180,7 @@ impl TryFrom<&HashMap<String, AttributeValue>> for Product {
                 .ok_or(Error::InternalError("Missing id"))?
                 .as_s()
                 .ok_or(Error::InternalError("id is not a string"))?
+                .to_string(),
         })
     }
 }
