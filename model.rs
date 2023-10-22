@@ -166,3 +166,7 @@ impl AttributeValue {
         }
     }
 }
+
+impl TryFrom<&HashMap<String, AttributeValue>> for Product {
+    type Error = Error;
+}
