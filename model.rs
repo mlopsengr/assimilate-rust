@@ -183,6 +183,7 @@ impl TryFrom<&HashMap<String, AttributeValue>> for Product {
                 .to_string(),
             name: value
                 .get("name")
+                .ok_or(Error::InternalError("Missing Name"))?
         })
     }
 }
