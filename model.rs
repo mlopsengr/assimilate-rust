@@ -169,4 +169,8 @@ impl AttributeValue {
 
 impl TryFrom<&HashMap<String, AttributeValue>> for Product {
     type Error = Error;
+
+    ///Try to convert a DynamoDb item into a product
+    /// 
+    /// This could fail as the DynamoDB item might be missing ome fields.
 }
