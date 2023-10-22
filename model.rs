@@ -173,4 +173,7 @@ impl TryFrom<&HashMap<String, AttributeValue>> for Product {
     ///Try to convert a DynamoDb item into a product
     /// 
     /// This could fail as the DynamoDB item might be missing ome fields.
+    fn try_from(value: &HashMap<String, AttributeValue>) -> Result<Self, Self::Error> {
+        
+    }
 }
