@@ -190,6 +190,8 @@ impl TryFrom<&HashMap<String, AttributeValue>> for Product {
             price: value
                 .get("price")
                 .ok_or(Error::InternalError("Missing price"))?
+                .as_n()
+                .ok_or(Error::InternalError("price is not a number"))?
         })
     }
 }
