@@ -248,4 +248,13 @@ fn test_deserialize() {
 
     assert_eq!(event.records.len(), 2);
     assert_eq!(event.records[0].event_name, "INSERT");
+    assert_eq!(
+        event.records[0]
+            .dynamodb
+            .new_image
+            .get("name")
+            .unwrap()
+            .as_s(),
+            
+    )
 }
