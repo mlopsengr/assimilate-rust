@@ -209,7 +209,9 @@ mod tests {
                 "eventVersion": "1.1",
                 "dynamodb": {
                     "Keys: {
-                        
+                    "id": {
+                        "S":"101"
+                    }
                     }
                 }
             }
