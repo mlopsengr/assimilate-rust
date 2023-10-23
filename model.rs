@@ -228,7 +228,8 @@ mod tests {
                 "StreamViewType": "NEW_AND_OLD_IMAGES",
                 "SequenceNumber": "111",
                 "SizeBytes": 26
-            }
+            },
+            "awsRegion": "eu-west-1",
         ]
     }
 
