@@ -247,4 +247,5 @@ fn test_deserialize() {
     let event = get_ddb_event();
 
     assert_eq!(event.records.len(), 2);
+    assert_eq!(event.records[0].event_name, "INSERT");
 }
