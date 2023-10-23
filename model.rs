@@ -198,5 +198,10 @@ impl TryFrom<&HashMap<String, AttributeValue>> for Product {
 
 #[cfg(test)]
 mod tests {
-    
+    use super::*;
+
+    fn get_ddb_event() -> DynamDBEvent {
+        let data = r#""
+    }
+
 }
