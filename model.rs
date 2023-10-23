@@ -283,6 +283,8 @@ fn test_dynamodb_into_event() {
     assert_eq!(Events.len(), 2);
     match &events[0] {
         Event::Created { product } = {
+            assert_eq!(product.id, "101");
+            
 
         }
     }
