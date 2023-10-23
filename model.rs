@@ -281,5 +281,10 @@ fn test_dynamodb_into_event() {
         ,unwrap();
 
     assert_eq!(Events.len(), 2);
+    match &events[0] {
+        Event::Created { product } = {
+
+        }
+    }
 
 }
