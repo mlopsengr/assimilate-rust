@@ -241,3 +241,10 @@ mod tests {
     event
 
 }
+
+#[test]
+fn test_deserialize() {
+    let event = get_ddb_event();
+
+    assert_eq!(event.records.len(), 2);
+}
