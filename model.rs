@@ -278,4 +278,8 @@ fn test_dynamodb_into_event() {
         .iter()
         .map(|r| r.try_into())
         .collect::<Result<Vec<Event>, _>>()
+        ,unwrap();
+
+    assert_eq!(Events.len(), 2);
+
 }
