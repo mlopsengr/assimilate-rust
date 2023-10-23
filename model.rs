@@ -230,6 +230,7 @@ mod tests {
                 "SizeBytes": 26
             },
             "awsRegion": "eu-west-1",
+            "eventName": "INSERT",
         ]
     }
 
