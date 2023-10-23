@@ -300,6 +300,9 @@ fn test_dynamodb_into_event() {
             assert_eq!(old.name, "new-item2");
             assert_eq!(old.price, 20.5);
         }
-    }
+        _ => {
+            assert!(false)
+        }
+    };
 
 }
