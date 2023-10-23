@@ -205,7 +205,13 @@ mod tests {
     {
         "Records": [
             {
-                "eventID": "1"
+                "eventID": "1",
+                "eventVersion": "1.1",
+                "dynamodb": {
+                    "Keys: {
+                        
+                    }
+                }
             }
         ]
     }
