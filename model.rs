@@ -295,7 +295,10 @@ fn test_dynamodb_into_event() {
         Event::Updated { new, old } => {
             assert_eq!(new.id, "103");
             assert_eq!(new.name, "new-item2");
-            ass
+            assert_eq!(new.price, 30.5);
+            assert_eq!(old.id, "102");
+            assert_eq!(old.name, "new-item2");
+            assert_eq!(old.price, 20.5);
         }
     }
 
