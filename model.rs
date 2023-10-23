@@ -258,5 +258,11 @@ fn test_deserialize() {
         Some("new_item")
     );
     assert_eq!(event.records[1].event_name, "MODIFY");
-    
+    assert_eq!(
+        event.records[1]
+        .dynamodb
+        .old_image
+        get("name")
+    )
+
 }
