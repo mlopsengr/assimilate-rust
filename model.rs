@@ -263,6 +263,9 @@ fn test_deserialize() {
         .dynamodb
         .old_image
         get("name")
+        .unwrap()
+        .as_s(),
+    Some("new-item2")
     )
 
 }
