@@ -294,6 +294,8 @@ fn test_dynamodb_into_event() {
     match &events[1] {
         Event::Updated { new, old } => {
             assert_eq!(new.id, "103");
+            assert_eq!(new.name, "new-item2");
+            ass
         }
     }
 
