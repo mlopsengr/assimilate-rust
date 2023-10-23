@@ -214,8 +214,14 @@ mod tests {
                     }
                 },
                 "NewImage": {
-                    
-                }
+                    "id": {
+                        "S": "101"
+                    }
+                },
+                "name": {
+                    "S": "new-item" 
+                },
+                "proce
                 }
             }
         ]
