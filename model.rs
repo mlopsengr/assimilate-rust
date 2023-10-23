@@ -275,5 +275,7 @@ fn test_dynamodb_into_event() {
 
     let events = ddb_event
         .records
-        
+        .iter()
+        .map(|r| r.try_into())
+        .collect::<Result<Vec<Event>, _>>()
 }
