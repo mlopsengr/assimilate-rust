@@ -232,7 +232,12 @@ mod tests {
             "awsRegion": "eu-west-1",
             "eventName": "INSERT",
             "eventSourceARN": "someARN",
+            "eventSource": "aws:dynamodb"
         ]
-    }
+    }"#;
+
+    let event: DynamDBEvent = serde_json::from_str(data).unwrap();
+
+    event
 
 }
