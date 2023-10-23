@@ -214,15 +214,20 @@ mod tests {
                     }
                 },
                 "NewImage": {
-                    "id": {
-                        "S": "101"
-                    }
+                "id": {
+                    "S": "101"
+                }
                 },
                 "name": {
                     "S": "new-item" 
                 },
-                "proce
+                "price": {
+                    "N": "10.5"
                 }
+                },
+                "StreamViewType": "NEW_AND_OLD_IMAGES",
+                "SequenceNumber": "111",
+                "SizeBytes": 26
             }
         ]
     }
