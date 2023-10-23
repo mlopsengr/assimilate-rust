@@ -231,6 +231,7 @@ mod tests {
             },
             "awsRegion": "eu-west-1",
             "eventName": "INSERT",
+            "eventSourceARN": "someARN",
         ]
     }
 
