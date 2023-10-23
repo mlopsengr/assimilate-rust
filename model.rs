@@ -255,6 +255,8 @@ fn test_deserialize() {
             .get("name")
             .unwrap()
             .as_s(),
-            
-    )
+        Some("new_item")
+    );
+    assert_eq!(event.records[1].event_name, "MODIFY");
+    
 }
