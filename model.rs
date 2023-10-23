@@ -266,6 +266,14 @@ fn test_deserialize() {
         .unwrap()
         .as_s(),
     Some("new-item2")
-    )
+    );
+}
 
+#[test]
+fn test_dynamodb_into_event() {
+    let ddb_event = get_ddb_event();
+
+    let events = ddb_event
+        .records
+        
 }
