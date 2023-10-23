@@ -202,6 +202,12 @@ mod tests {
 
     fn get_ddb_event() -> DynamDBEvent {
         let data = r#""
+    {
+        "Records": [
+            {
+                "eventID": "1"
+            }
+        ]
     }
 
 }
