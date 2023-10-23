@@ -195,3 +195,8 @@ impl TryFrom<&HashMap<String, AttributeValue>> for Product {
         })
     }
 }
+
+#[cfg(test)]
+mod tests {
+    
+}
