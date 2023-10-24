@@ -310,4 +310,8 @@ fn test_dynamodb_into_event() {
 #[test]
 fn test_dynamodb_into_event() {
     let ddb_event = get_ddb_event();
+
+    let product: Product = (&ddb_event.records[0].dynamodb.new_image)
+        .try_into()
+        .unwrap():
 }
