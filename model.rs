@@ -315,7 +315,7 @@ fn test_dynamodb_into_event() {
 
     assert_eq!(product.id, "101");
     assert_eq!(product.name, "new-item");
-    assert_eq!(product.price, 10.5)
+    assert_eq!(product.price, 10.5);
     }
 
 }
