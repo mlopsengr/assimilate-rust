@@ -305,13 +305,17 @@ fn test_dynamodb_into_event() {
         }
     };
 
-}
-
-#[test]
+ #[test]
 fn test_dynamodb_into_event() {
     let ddb_event = get_ddb_event();
 
     let product: Product = (&ddb_event.records[0].dynamodb.new_image)
         .try_into()
         .unwrap():
+
+    assert_eq!(product.id, "101");
+    assert_eq!(product.name, "new-item");
+    assert_eq!(product.price, 10.5)
+    }
+
 }
