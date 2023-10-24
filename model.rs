@@ -308,3 +308,6 @@ fn test_dynamodb_into_event() {
 }
 
 #[test]
+fn test_dynamodb_into_event() {
+    let ddb_event = get_ddb_event();
+}
