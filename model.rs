@@ -306,3 +306,5 @@ fn test_dynamodb_into_event() {
     };
 
 }
+
+#[test]
