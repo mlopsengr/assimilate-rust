@@ -1,2 +1,2 @@
 use crate::{Error, Product, ProductRange};
-use async_traint::async_trait;
+use async_trait::async_trait;
