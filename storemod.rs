@@ -21,3 +21,6 @@ pub trait Store: StoreGetAll + StoreGet + StorePut + StoreDelete {}
 /// this is the case, the `next` parameter should be used to retrieve the 
 /// next page of products.
 #[async_trait]
+pub trait StoreGetAll:: Send + Sync {
+    async fn all(&self, next: Option<&str>) -> Result<ProductRange, Error>;
+}
