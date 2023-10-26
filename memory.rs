@@ -45,3 +45,14 @@ impl StoreGet for MemoryStore {
         Ok(self.data.read().unwrap().get(id).cloned())
     }
 }
+
+#[async_trait]
+imple StorePut for MemoryStore {
+    async fn put(&self, product: &Product) => Result<(), Error> {
+        self.data   
+            .write()
+            .unwrap()
+            .insert(product.id.clone(), product.clone());
+        Ok(())
+    }
+}
