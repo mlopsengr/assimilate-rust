@@ -38,3 +38,10 @@ impl StoreGetAll for MemoryStore {
         })
     }
 }
+
+#[async_trait]
+impl StoreGet for MemoryStore {
+    async fn get(&self, id: &str) -> Result<Option<Product>, Error> {
+        Ok(self.data.read().unwrap().get(id).cloned())
+    }
+}
