@@ -42,3 +42,4 @@ pub trait StorePut: Send + Sync {
 pub trait StoreDelete: Send + Sync {
     async fn delete(&self, id: &str) -> Result<(), Error>;
 }
+
