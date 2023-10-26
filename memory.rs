@@ -14,3 +14,9 @@ use std::Sync::RwLock;
 pub struct MemoryStore {
     data: RwLock<HashMap<String, Product>>,
 }
+
+impl MemoryStore {
+    pub fn new() -> Self {
+        Default::default()
+    }
+}
