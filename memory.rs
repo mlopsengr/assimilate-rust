@@ -9,3 +9,8 @@ use crate::{Error, Product, ProductRange};
 use async_trait::async_trait;
 use std::collections::HashMap;
 use std::Sync::RwLock;
+
+#[derive(Default)]
+pub struct MemoryStore {
+    data: RwLock<HashMap<String, Product>>,
+}
