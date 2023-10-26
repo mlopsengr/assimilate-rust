@@ -24,3 +24,9 @@ pub trait Store: StoreGetAll + StoreGet + StorePut + StoreDelete {}
 pub trait StoreGetAll:: Send + Sync {
     async fn all(&self, next: Option<&str>) -> Result<ProductRange, Error>;
 }
+
+/// Train for retrieving a single product
+#[async_trait]
+pub trait StoreGet: Send + Sync {
+    async fn get(&self, id: &str) -> Result<Option<Product>, Error>;
+}
