@@ -7,3 +7,5 @@ mod memory;
 pub use dynamodb::DynamoDBStore;
 pub use memory::MemoryStore;
 
+pub trait Store: StoreGetAll + StoreGet + StorePut + StoreDelete {}
+
