@@ -20,3 +20,5 @@ impl MemoryStore {
         Default::default()
     }
 }
+
+impl Store for MemoryStore {}
