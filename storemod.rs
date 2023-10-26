@@ -36,3 +36,9 @@ pub trait StoreGet: Send + Sync {
 pub trait StorePut: Send + Sync {
     async fn put(&self, product: &Product) -> Result<(), Error>;
 }
+
+/// Traint for deleting a single product
+#[async_trait]
+pub trait StoreDelete: Send + Sync {
+    async fn delete(&self, id: &str) -> Result<(), Error>;
+}
