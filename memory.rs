@@ -22,3 +22,19 @@ impl MemoryStore {
 }
 
 impl Store for MemoryStore {}
+
+#[async_trait]
+impl StoreGetAll for MemoryStore {
+    async fn all(&self, _: Option<str>) -> Result<ProductRange, Error> {
+        Ok(ProductRange {
+            products: self
+                .data
+                .read()
+                .unwrap()
+                .iter()
+                .map(|(_, v)| v.clone())
+                .collect(),
+            next: None,
+        })
+    }
+}
