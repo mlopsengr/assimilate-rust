@@ -20,3 +20,4 @@ pub trait Store: StoreGetAll + StoreGet + StorePut + StoreDelete {}
 /// A given store could return only a partial list of all the products. If
 /// this is the case, the `next` parameter should be used to retrieve the 
 /// next page of products.
+#[async_trait]
