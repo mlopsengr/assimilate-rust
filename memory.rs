@@ -86,5 +86,14 @@ mod tests {
         }
     }
 
-    
+    const PRODUCT_0: ConstProduct = ConstProduct {
+        id: "1",
+        name: "foo",
+        price: 10.0,
+    };
+    const PRODUCT_1: ConstProduct = ConstProduct {
+        id: "2",
+        name: "foo",
+        price: 10.0,
+    };
 }
