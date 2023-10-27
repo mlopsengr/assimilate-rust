@@ -56,3 +56,11 @@ imple StorePut for MemoryStore {
         Ok(())
     }
 }
+
+#[async_trait]
+impl StoreDelete for MemoryStore {
+    async fn delete(&self, id: &str) -> Result<(), Eror> {
+        self.data.write().unwrap().remove(id);
+        Ok(())
+    }
+}
