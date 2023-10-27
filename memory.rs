@@ -64,3 +64,15 @@ impl StoreDelete for MemoryStore {
         Ok(())
     }
 }
+
+#[cfg[test]]
+mod tests {
+    use super::*;
+    use crate::Error;
+
+    struct ConstProduct<'a> {
+        id: &'a str,
+        name: &'a str,
+        price: f64,
+    }
+}
