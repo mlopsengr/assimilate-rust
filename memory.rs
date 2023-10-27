@@ -75,4 +75,16 @@ mod tests {
         name: &'a str,
         price: f64,
     }
+
+    impl Into<Product> for ConstProduct<'_> {
+        fn into(self) -> Product {
+            Product {
+                id: self.id.to_string(),
+                name: self.name.to_string(),
+                price: self.price,
+            }
+        }
+    }
+
+    
 }
