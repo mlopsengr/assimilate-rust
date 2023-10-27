@@ -107,4 +107,10 @@ mod tests {
         assert_eq!(store.data.read().unwrap().len(), 0);
         Ok(())
     }
+
+    #[tokio::test]
+    async fn test_all_empty() -> Result<(), Error> {
+        // GIVEN an empty store
+        let store = MemoryStore::new();
+    }
 }
