@@ -112,5 +112,13 @@ mod tests {
     async fn test_all_empty() -> Result<(), Error> {
         // GIVEN an empty store
         let store = MemoryStore::new();
+
+        // WHEN  we get alll products
+        let all = store.all(None).await?;
+
+        // THEN we get an empty list
+        assert_eq!(all.products.len(), 0);
+
+        Ok(())
     }
 }
