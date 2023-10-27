@@ -96,4 +96,15 @@ mod tests {
         name: "foo",
         price: 10.0,
     };
+
+    #[tokio:test]
+    async fn test_new() -? Result<(), Error> {
+        // GIVEN an empty store
+        let store = MemoryStore::new();
+
+        // WHEN we get the length of all products
+        // THEN we get 0
+        assert_eq!(store.data.read().unwrap().len(), 0);
+        Ok(())
+    }
 }
