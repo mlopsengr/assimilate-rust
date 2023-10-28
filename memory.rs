@@ -145,5 +145,12 @@ mod tests {
     #[tokio::test]
     async fn test_all2() -> Result<(), Error> {
         // GIVEN a store with two products
+        let product0: Product = PRODUCT_O.into();
+        let product1: Product = PRODUCT_1.into();
+        let store = MemoryStore::new();
+        {
+            let mut data = store.data.write().unwrap();
+            data.insert(product0.id.clone(), product0.clone());
+        }
     }
 }
