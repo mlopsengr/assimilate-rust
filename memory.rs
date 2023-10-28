@@ -138,5 +138,12 @@ mod tests {
         // THEN we get the product
         assert_eq!(all.products.len(), 1);
         assert_eq!(all.products[0], product0);
+
+        Ok(())
+    }
+    
+    #[tokio::test]
+    async fn test_all2() -> Result<(), Error> {
+        // GIVEN a store with two products
     }
 }
