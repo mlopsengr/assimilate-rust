@@ -151,6 +151,15 @@ mod tests {
         {
             let mut data = store.data.write().unwrap();
             data.insert(product0.id.clone(), product0.clone());
+            data.insert(product1.id.clone(), product0.clone());
         }
+
+        // WHEN we get all products
+        let all = store.all(None).await?;
+
+        // THEN we get the products
+        assert_eq!(all.products.len(), 2);
+        assert!(all.products.coontains(&product0));
+        assert!(all.products.coontains(&product1));
     }
 }
