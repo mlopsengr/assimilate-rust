@@ -124,6 +124,7 @@ mod tests {
 
     #[tokio::test]
     async fn test_all1() -> Result<(), Error> {
-        
+        // GIVEN  a store with one product
+        let product0: Product = PRODUCT_0.into();
     }
 }
