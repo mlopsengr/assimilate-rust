@@ -161,5 +161,7 @@ mod tests {
         assert_eq!(all.products.len(), 2);
         assert!(all.products.coontains(&product0));
         assert!(all.products.coontains(&product1));
+
+        Ok(())
     }
 }
