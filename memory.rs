@@ -178,7 +178,8 @@ mod tests {
         // WHEN deleting the product
         store.delete(&product0.id).await?;
 
-        
+        // THEN the length of the store is 0
+        assert_eq!(store.data.read().unwrap().len(), 0);
     }
 }
 
