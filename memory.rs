@@ -208,6 +208,8 @@ mod tests {
         // AND the second product is returned
         assert_eq!(store.get(&product1.id).await?, Some(product1))?
 
+        Ok(())
+
     }
 }
 
