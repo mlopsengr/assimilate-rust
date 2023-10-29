@@ -170,6 +170,10 @@ mod tests {
         // GIVEN a store with a product
         let product0: Product = PRODUCT_0.into();
         let store = MemoryStore::new();
+        {
+            let mut data = store.data.write().unwrap();
+            data.insert(product0.id.clone(), product0.clone());
+        }
     }
 }
 
