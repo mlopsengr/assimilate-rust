@@ -197,6 +197,13 @@ mod tests {
             data.insert(product0.id.clone(), product0.clone());
             data.insert(product1.id.clone(), product1.clone());
         }
+
+        // WHEN deleting the first product
+        store.delete(&product0.id).await?;
+
+        // THEN the length of the store is 1
+        assert_eq!(store.data.read().unwrap().len(), 1);
+        //
     }
 }
 
