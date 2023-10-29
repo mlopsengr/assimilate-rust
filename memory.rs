@@ -174,6 +174,11 @@ mod tests {
             let mut data = store.data.write().unwrap();
             data.insert(product0.id.clone(), product0.clone());
         }
+
+        // WHEN deleting the product
+        store.delete(&product0.id).await?;
+
+        
     }
 }
 
