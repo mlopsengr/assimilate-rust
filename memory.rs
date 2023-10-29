@@ -180,6 +180,10 @@ mod tests {
 
         // THEN the length of the store is 0
         assert_eq!(store.data.read().unwrap().len(), 0);
+        // AND the product is not returned
+        assert_eq!(store.get(&product0.id).await?, None);
+
+        ok(())
     }
 }
 
