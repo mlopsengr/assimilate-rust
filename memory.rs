@@ -189,6 +189,9 @@ mod tests {
     #[tokio::test]
     async fn test_delete2() -> Result<(), Error> {
         // GIVEN a store with two products
+        let product0: Product = PRODUCT_0.into();
+        let product1: Product = PRODUCT_1.into();
+        let store = MemoryStore::new();
     }
 }
 
