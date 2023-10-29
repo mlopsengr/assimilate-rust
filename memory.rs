@@ -183,7 +183,12 @@ mod tests {
         // AND the product is not returned
         assert_eq!(store.get(&product0.id).await?, None);
 
-        ok(())
+        Ok(())
+    }
+
+    #[tokio::test]
+    async fn test_delete2() -> Result<(), Error> {
+        // GIVEN a store with two products
     }
 }
 
