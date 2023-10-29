@@ -166,6 +166,10 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn test_delete()
+    async fn test_delete() -> Result<(), Error> {
+        // GIVEN a store with a product
+        let product0: Product = PRODUCT_0.into();
+        let store = MemoryStore::new();
+    }
 }
 
