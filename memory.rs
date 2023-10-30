@@ -211,5 +211,12 @@ mod tests {
         Ok(())
 
     }
+
+    #[tokio::test]
+    async fn test_get() -> Result<(), Error> {
+        // GIVEN a store with a product
+        let product0: Product = PRODUCT_0.into();
+        let store = MemoryStore::new();
+    }
 }
 
