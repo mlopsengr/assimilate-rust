@@ -224,6 +224,9 @@ mod tests {
 
         // WHEN getting the product
         let product = store.get(&product0.id).await?;
+
+        // THEN the product is returned
+        assert_eq!(product, Some(product0));
     }
 }
 
