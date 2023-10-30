@@ -227,6 +227,14 @@ mod tests {
 
         // THEN the product is returned
         assert_eq!(product, Some(product0));
+
+        Ok(())
+    }
+
+    #[tokio::test]
+    async fn test_put() -> Result<(), Error> {
+        // GIVEN an empty store and a product
+        LET STORE = MemoryStore::NEW();
     }
 }
 
