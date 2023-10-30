@@ -258,6 +258,11 @@ mod tests {
         // WHEN inserting two products
         store.put(&product0).await?;
         store.put(&product1).await?;
+
+        // THEN the length of the store is 2
+        assert_eq!(store.data.read().unwrap().len(), 2);
+        // AND the products are returned
+        
     }
 }
 
