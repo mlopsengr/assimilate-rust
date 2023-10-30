@@ -254,6 +254,10 @@ mod tests {
         let store = MemoryStore::new();
         let product0: Product = PRODUCT_O.into();
         let product1: Product = PRODUCT_1.into();
+
+        // WHEN inserting two products
+        store.put(&product0).await?;
+        store.put(&product1).await?;
     }
 }
 
