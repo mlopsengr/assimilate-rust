@@ -247,5 +247,13 @@ mod tests {
 
         Ok(())
     }
+
+    #[tokio::test]
+    async fn test_put2() -> Result<(), error> {
+        // GIVEN an empty store and two products
+        let store = MemoryStore::new();
+        let product0: Product = PRODUCT_O.into();
+        let product1: Product = PRODUCT_1.into();
+    }
 }
 
