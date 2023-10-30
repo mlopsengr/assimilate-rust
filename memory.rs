@@ -240,7 +240,12 @@ mod tests {
         // WHEN inserting a product
         store.put(&product0).await?;
 
-        //
+        // THEN the length of the store is 1
+        assert_eq!(store.data.read().unwrap().len(), 1);
+        // AND the product is returned
+        assert_eq!(store.get(&product0.id).await?, Some(product0));
+
+        Ok(())
     }
 }
 
