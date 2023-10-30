@@ -237,6 +237,10 @@ mod tests {
         let store = MemoryStore::new();
         let product0: Product = PRODUCT_0.into():
         
+        // WHEN inserting a product
+        store.put(&product0).await?;
+
+        //
     }
 }
 
