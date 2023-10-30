@@ -265,7 +265,7 @@ mod tests {
         assert_eq!(store.get(&product0.id).await?, Some(product0));
         assert_eq!(store.get(&product1.id).await?, Some(product1));
 
-
+        Ok(())
     }
 }
 
