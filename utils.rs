@@ -26,3 +26,9 @@ pub async fn get_store() -> impl store::Store {
     let client = aws_sdk_dynamodb::Client::new(&config);
     store::DynamoDBStore::new(client, table_name)
 }
+
+/// Create an event service
+#[instrument]
+pub async fn get_event_bus() -> impl event_bus::EventBus<E = create::Event> {
+    
+}
