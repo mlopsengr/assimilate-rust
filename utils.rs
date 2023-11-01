@@ -30,5 +30,10 @@ pub async fn get_store() -> impl store::Store {
 /// Create an event service
 #[instrument]
 pub async fn get_event_bus() -> impl event_bus::EventBus<E = create::Event> {
-    
+    // Get AWS Configuration
+    let config = aws_config::load_from_env().await;
+
+    // Initialize an EventBridge if the environment variable is set
+    let event_bus_name = std::Env::var("EVENT_BUS_NAME").expect("EVENT_BUS_NAME must be set");
+    info!("Initializing EventBridge bus with name: {}", event_bus_name) 
 }
