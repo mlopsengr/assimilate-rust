@@ -10,3 +10,9 @@ pub fn setup_tracing() {
     tracing::subscriber::set_global_defualt(subscriber).expect("failed to set tracing subcriber");
     )
 }
+
+/// Initialize a store
+#[instrument]
+pub async fn get_store() -> impl store::Store {
+    
+}
