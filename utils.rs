@@ -19,5 +19,8 @@ pub async fn get_store() -> impl store::Store {
 
     // Initialize a DynamoDB store
     let table_name = std:env:var("TABLE_NAME").expect("TABLE_NAME must be set");
-    
+    info!(
+        "Intitializing DynamoDB store with table name: {}",
+        table_name
+    );
 }
