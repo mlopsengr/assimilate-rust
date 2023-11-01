@@ -24,5 +24,5 @@ pub async fn get_store() -> impl store::Store {
         table_name
     );
     let client = aws_sdk_dynamodb::Client::new(&config);
-    
+    store::DynamoDBStore::new(client, table_name)
 }
