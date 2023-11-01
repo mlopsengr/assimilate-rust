@@ -16,4 +16,8 @@ pub fn setup_tracing() {
 pub async fn get_store() -> impl store::Store {
     // Get AWS Configuration
     let config = aws_config::load_from_env().await;
+
+    // Initialize a DynamoDB store
+    let table_name = std:env:var("TABLE_NAME").expect("TABLE_NAME must be set");
+    
 }
