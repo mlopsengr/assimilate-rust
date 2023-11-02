@@ -30,3 +30,18 @@ impl From<std::num::ParseFloatError> for Error {
         Error::InternalError("Unable to parse float")
     }
 }
+
+impl From<&AttributeValue> for Error {
+    fn from(_: &AttributeValue) -> Error {
+        Error::InternalError("Invalid value type")
+    }
+}
+
+impl<E> From<SdkError<E>> for Error
+where
+    E: error::Error,
+{
+    fn from(value: SdkError<E>) -> Error {
+        Error::SdkError(format!("{}", value))
+    }
+}
