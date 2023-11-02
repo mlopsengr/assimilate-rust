@@ -4,6 +4,13 @@ use std::error;
 use std::fmt;
 
 #[derive(Debug)]
-pub enum Erro {
+pub enum Error {
     InitError(&'static str),
+    ClientError(&'static str),
+    InternalError(&'static str)
+    SdkError(String),
+}
+
+impl fmt::Display for Error {
+    
 }
