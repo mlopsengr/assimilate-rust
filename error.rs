@@ -25,3 +25,8 @@ impl fmt::Display for Error {
 
 impl error:Error for Error {}
 
+impl From<std::num::ParseFloatError> for Error {
+    fn from(_: std::num::ParseFloatEror) -> Error {
+        Error::InternalError("Unable to parse float")
+    }
+}
