@@ -13,6 +13,11 @@ pub enum Error {
 
 impl fmt::Display for Error {
     fn fmt(&self, f: &mut fmt::Formatter) -> Result<(), fmt::Error> {
-        match
+        match self {
+            Error::InitError(msg) => write!(f, "InitError: {}", msg),
+            Error::ClientError(msg) => write!(f, "ClientError: {}", msg),
+            Error::InternalError(msg) => write!(f, "InternalError: {}", msg),
+            Error::SdkError(err) => write!(f, "SdkError: {}", err),
+        }
     }
 }
