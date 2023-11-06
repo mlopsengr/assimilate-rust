@@ -17,3 +17,7 @@ pub async fn get_product(
 pub async fn get_product(store: &dyn StoreGet, id: &str) -> Result<Option<Product>, Error> {
     store.get(id).await
 }
+
+pub async fn put_product(store: &dyn StorePut, product: &Product) -> Result<(), Error> {
+
+}
