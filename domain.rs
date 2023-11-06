@@ -23,5 +23,10 @@ pub async fn put_product(store: &dyn StorePut, product: &Product) -> Result<(), 
     let mut product = product.clone();
     product.price = (product.price * 100.0).round() / 100.0;
 
-    
+   store.put(&product).await
 }
+
+pub async fn delete_product(store: &dyn StoreDelete, id: &str) -> Result<(), Error> {
+    store.delete(id).await
+}
+
