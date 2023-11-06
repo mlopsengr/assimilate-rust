@@ -19,5 +19,6 @@ pub async fn get_product(store: &dyn StoreGet, id: &str) -> Result<Option<Produc
 }
 
 pub async fn put_product(store: &dyn StorePut, product: &Product) -> Result<(), Error> {
-
+    // Round price to 2 decimal digits
+    let mut product = product.clone();
 }
