@@ -29,4 +29,9 @@ pub async fn put_product(store: &dyn StorePut, product: &Product) -> Result<(), 
 pub async fn delete_product(store: &dyn StoreDelete, id: &str) -> Result<(), Error> {
     store.delete(id).await
 }
-
+pub async fn send_events(
+    event_bus: &dyn EventBus<E = Event>,
+    events: &[Event],
+) -> Result<(), Error> {
+    event_bus.send_events(events).await
+}
