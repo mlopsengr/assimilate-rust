@@ -42,7 +42,15 @@ impl Client {
                 tokio_serde::formats::Bincod::default(),
             ))),
             txn: Cell::new(None),
-    })
-}
+        })
+    }
+
+    /// Call a server method
+    async fn call(&self, request: Request) -> Result<Response> {
+        let mut conn = self.conn.lock().await;
+        self.call_locked(&mut conn, request).await
+    }
+
+
 
 }
