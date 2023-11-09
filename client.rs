@@ -14,3 +14,16 @@ use std::sync::Arc;
 use tokio::sync::{Mutex, MutexGuard};
 use tokio::net::{TcpStream, ToSocketAddrs};
 use tokio_util::codec::{Framed, LengthDelimitedCodec};
+
+
+type Connection = tokio_serde::Framed<
+    Framed<TcpStream, LengthDelimitedCodec>,
+    Result<Response>,
+    Request,
+    tokio_serde::formats::Bincode<Result<Response>, Request>,
+>;
+
+/// Number of serialization retries in with_txn()
+const WITH_TXN_RETRIES: u8 = 8;
+
+
