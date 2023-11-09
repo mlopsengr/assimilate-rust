@@ -51,6 +51,17 @@ impl Client {
         self.call_locked(&mut conn, request).await
     }
 
-
+    /// Call a server method while holding the mutext lock
+    async fn call_locked(
+        &self,
+        conn: &mut MutexGuard<'_, Connection>,
+        request: Request,
+    ) -> Result<Response> {
+        conn.send(request).await?;
+        match conn.try_next().await? {
+            Some(result) => result,
+            None => Err(Error::Internal("Server disconnected".into())),
+        }
+    }
 
 }
