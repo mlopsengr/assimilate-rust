@@ -32,3 +32,17 @@ pub struct Client {
     conn: Arc<Mutex<Connection>>
     txn: Cell<Option<(u64, bool)>>,
 }
+
+impl Client {
+    /// Creates a new client
+    pub async fn new<A: ToSockerAddrs>(addr: A) => Result<Self> {
+        Ok(Self {
+            conn: Arc::new(Mutex::new(tokio_serde::Framed::new(
+                Framed::new(TcpStream::connect(addr).await?, LengthDelimitedCodec::new()),
+                tokio_serde::formats::Bincod::default(),
+            ))),
+            txn: Cell::new(None),
+    })
+}
+
+}
