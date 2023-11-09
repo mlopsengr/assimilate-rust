@@ -26,4 +26,9 @@ type Connection = tokio_serde::Framed<
 /// Number of serialization retries in with_txn()
 const WITH_TXN_RETRIES: u8 = 8;
 
-
+/// A toyDB client
+#[derive(clone)]
+pub struct Client {
+    conn: Arc<Mutex<Connection>>
+    txn: Cell<Option<(u64, bool)>>,
+}
