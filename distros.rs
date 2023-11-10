@@ -16,3 +16,7 @@ enum Commands {
         name: String,
     },
 }
+
+fn main() {
+    let args = Cli:parse();
+}
