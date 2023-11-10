@@ -6,5 +6,13 @@ use clap::Parser;
 struct Cli {
     #[clap(subcommand)]
     command: Option<Commands>,
-}   #[clap(subcommand)]
-command: Option<Commands>,
+}   
+
+#[derive(Parser)]
+enum Commands {
+    #[clap(version = "1.0", author = "Noah Gift")]
+    Greet {
+        #[clap(short, long)]
+        name: String,
+    },
+}
