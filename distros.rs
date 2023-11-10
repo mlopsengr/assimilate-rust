@@ -23,5 +23,6 @@ fn main() {
         Some(Commands::Greet { name }) => {
             println!("Hello, {}!", name);
         }
+        None => println!("No subcommand was used");
     }
 }
