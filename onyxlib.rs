@@ -9,3 +9,12 @@ use tracing::Level;
 use tracing_subsriber::FmtSubscriber;
 
 type Error = Box<dyn std::error::Error>;
+
+pub fn run() -> Result<(), Error> {
+    // Setup the example's log level.
+    // NOTE: ONNX Runtime's log level is controlled separately when building the environment.
+    let subscriber = FmtSubscriber::builder()
+        .with_max_level(Level::TRACE)
+        .finish()
+                            
+}
