@@ -15,6 +15,8 @@ pub fn run() -> Result<(), Error> {
     // NOTE: ONNX Runtime's log level is controlled separately when building the environment.
     let subscriber = FmtSubscriber::builder()
         .with_max_level(Level::TRACE)
-        .finish()
+        .finish();
+
+    tracing::subscriber::set_global_default(subscriber).expect("setting default subscriber failed");
                             
 }
