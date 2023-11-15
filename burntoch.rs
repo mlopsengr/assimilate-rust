@@ -5,6 +5,8 @@ mod tch_gpu {
     use mnist::training;
 
     pub fn run() {
+        #[cfg(not(target_os = "macos"))]
+        let device = LibTorchDevice::cuda(0);
 
     }
     
