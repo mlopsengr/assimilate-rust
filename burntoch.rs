@@ -20,5 +20,8 @@ mod tch_cpu {
     use burn_tch::{LibTorch, LibTorchDevice};
     use mnist::training;
 
-
+    pub fn run() {
+        let device = LibTorchDevice::Cpu;
+        training::run::<Autodiff<LibTorch<f32>>>(device);
+    }
 }
