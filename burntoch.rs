@@ -7,7 +7,8 @@ mod tch_gpu {
     pub fn run() {
         #[cfg(not(target_os = "macos"))]
         let device = LibTorchDevice::cuda(0);
-
+        #[cfg(target_os = "macos")]
+        let device = LibTorchDevice::Mps;
     }
     
 }
