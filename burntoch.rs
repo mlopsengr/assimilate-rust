@@ -9,6 +9,9 @@ mod tch_gpu {
         let device = LibTorchDevice::cuda(0);
         #[cfg(target_os = "macos")]
         let device = LibTorchDevice::Mps;
+    
+        training::run::<Autodiff<Libtorch<f32>>>(device);
     }
+
     
 }
