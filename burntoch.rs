@@ -15,7 +15,10 @@ mod tch_gpu {
 }
 
 #[cfg(feature = "tch-cpu")]
-mode tch_cpu {
+mod tch_cpu {
     use burn_autodiff::Autodiff;
-    use burn_tch::
+    use burn_tch::{LibTorch, LibTorchDevice};
+    use mnist::training;
+
+
 }
