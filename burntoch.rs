@@ -11,7 +11,8 @@ mod tch_gpu {
         let device = LibTorchDevice::Mps;
     
         training::run::<Autodiff<Libtorch<f32>>>(device);
-    }
-
-    
+    }    
 }
+
+#[cfg(feature = "tch-cpu")]
+
