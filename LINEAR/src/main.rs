@@ -3,7 +3,6 @@
 const LIFE: u32 = 8;
 const DEATH: i32 = -28;
 
-pub(crate) static mut GLOBAL: i32 = 0;
 
 
 // add a main function
@@ -14,4 +13,9 @@ fn main() {
     return;
 }
 
+let mut s1 = String::from("abc");
+do_stuff(&mut s1);
 
+fn do_stuff(s: &mut String) {
+    s.insert_str(0, "Hi, ");
+}
