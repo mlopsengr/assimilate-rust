@@ -1,4 +1,4 @@
-# assimilate-rust
+# Assimilate-rust
 Journey to learning Rust
 
 ## Installation
