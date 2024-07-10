@@ -8,6 +8,7 @@ pub fn add(a: i32, b: i32) -> i32 {
 pub fn substract(a: i32, b: i32) -> i32 {
     a - b
 }
+
 //Multiply two number
 pub fn multiply(a: i32, b: i32) -> i32 {
     a * b
