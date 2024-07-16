@@ -13,7 +13,6 @@ fn main() {
         1 | 2 => println!("It is one or 2"),
         _ => println!("It is something else"),
     }
-
     for i in 1..=5 {
     println!("{}", i);
     }
