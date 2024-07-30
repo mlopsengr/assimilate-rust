@@ -9,6 +9,7 @@ use crate::{
     model::{Event, Product},
     Error,
 };
+
 use serde::{Deserialize, Serialize}
 use std::collections::HashMap;
 
